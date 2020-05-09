@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: me.dogeon.pktool.Main
+SplashScreen-Image: assets/pktool/textures/icon.gif
+
