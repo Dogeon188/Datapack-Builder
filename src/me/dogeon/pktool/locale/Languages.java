@@ -25,7 +25,7 @@ public class Languages {
 
   public static Dictionary getLangDict(String l) {
     Dictionary<String, String> lang = new Hashtable<>();
-    InputStream res = Language.class.getResourceAsStream(String.format("/assets/pktool/lang/%s.yml", l));
+    InputStream res = Language.class.getResourceAsStream(String.format("/assets/pktool/lang/%s.lang", l));
     try {
       BufferedReader br = new BufferedReader(new InputStreamReader(res, "utf8"));
       int i;

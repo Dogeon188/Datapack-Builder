@@ -12,12 +12,15 @@ public class Bench {
 
   String prefix = "pktool.bench.";
   String[] name;
+  Runnable[] actions;
   int att[][];
   ArrayList<JComponent> components;
 
   int lLabel;
   int lCheckBox;
   int lButton;
+
+  boolean bool_tmp;
 
   public Bench(JFrame fr) {
     int f[] = { // fill
@@ -57,6 +60,15 @@ public class Bench {
       {0, 5, 2, 1, 0, 0, f[0], l[0]}, // jbutton generate
     };
     att = a;
+    Runnable r[] = {
+      null,
+      null,
+      null,
+      null,
+      () -> Configurations.useJsonChatComponent = bool_tmp,
+      () -> Configurations.generateMinecraftNamespace = bool_tmp
+    };
+    actions = r;
     components = new ArrayList<JComponent>();
     addComponents(fr);
   }
@@ -95,10 +107,12 @@ public class Bench {
     for (i = lLabel + 2; i < lLabel + lCheckBox + 2; i++) {
       JCheckBox cb = new JCheckBox((String)ld.get(prefix + name[i]));
       components.add(cb);
+      Runnable r = actions[i];
       cb.addActionListener(
         new ActionListener() {
           public void actionPerformed(ActionEvent e) {
-            // Configurations.useJsonChatComponent = true;
+            bool_tmp = cb.isSelected();
+            r.run();
           }
         });
     }

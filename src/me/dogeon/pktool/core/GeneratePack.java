@@ -13,8 +13,8 @@ public class GeneratePack {
   public static void generate(JFrame f) {
     JPanel bench = (JPanel)f.getContentPane().getComponent(0);
     Component[] cs = bench.getComponents();
-    String packname = "NOPE";
-    String packdesc = "nope";
+    String packname = null;
+    String packdesc = null;
 
     for (Component c : cs) {
       if (c.getClass() == JTextField.class) {
@@ -23,7 +23,7 @@ public class GeneratePack {
         if (packname.equals("")) {
           showWarn("no_packname");
           return;
-        } else if (doContainInvalidChar(packname)) {
+        } else if (packname.matches(".*[\\/|?\"*:<>.].*")) {
           showWarn("packname_with_invalid_char");
           return;
         }
@@ -32,25 +32,34 @@ public class GeneratePack {
         JViewport v = (JViewport) s.getComponent(0);
         JTextArea t = (JTextArea) v.getComponent(0);
         packdesc = t.getText();
-        if (true) {
+        if (!Configurations.useJsonChatComponent) {
+          packdesc = packdesc.replace("\"", "\\\"");
           packdesc = "\"" + packdesc + "\"";
-        } else {
-          packdesc = packdesc.replace("\n", "\n\t\t");
         }
       }
     }
 
     try {
       String packroot = "datapacks/" + packname;
-      new File(packroot).mkdir();
+      JFileChooser jfc = new JFileChooser(System.getProperty("user.dir"));
+      jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+      jfc.setDialogTitle("Save datapack to...");
+      int res1 = jfc.showSaveDialog(null);
+      if (res1 == JFileChooser.CANCEL_OPTION) {
+        return;
+      }
+      File file1 = jfc.getSelectedFile();
+      packroot = file1.getAbsolutePath() + "/" + packname;
+
+      new File(packroot).mkdirs();
       FileWriter fw = new FileWriter(packroot + "/pack.mcmeta");
       fw.write(String.format("{\n\t\"pack\":{\n\t\t\"pack_format\": 5,\n\t\t\"description\": %s\n\t}\n}", packdesc));
       fw.close();
-      new File(packroot + "/data").mkdir();
+      new File(packroot + "/data").mkdirs();
 
       showSuccess(packname);
     } catch (Exception e) {
-      System.out.println("Unable to make datapack!");
+      showWarn("unknown");
       e.printStackTrace();
     }
   }
@@ -76,9 +85,5 @@ public class GeneratePack {
       (String)ld.get(prefix + "success.title"),
       JOptionPane.INFORMATION_MESSAGE
       );
-  }
-
-  private static boolean doContainInvalidChar(String s) {
-    return s.contains("\\") || s.contains("/") || s.contains("|") || s.contains("?") || s.contains("\"") || s.contains("*") || s.contains(":") || s.contains("<") || s.contains(">") || s.contains(".");
   }
 }
