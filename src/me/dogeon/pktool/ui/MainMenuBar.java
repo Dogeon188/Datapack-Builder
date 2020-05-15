@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.lang.reflect.*;
 import java.util.*;
 import javax.swing.*;
-// import me.dogeon.pktool.Main;
+import me.dogeon.pktool.Main;
 import me.dogeon.pktool.ui.mbf.*; // short hand for "menubarFunction"
 import me.dogeon.pktool.locale.*;
 

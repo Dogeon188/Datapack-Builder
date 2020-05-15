@@ -2,7 +2,6 @@ package me.dogeon.pktool.ui;
 
 import java.awt.*;
 import java.util.*;
-import javax.script.Compilable;
 import javax.swing.*;
 import me.dogeon.pktool.ui.MainMenuBar;
 import me.dogeon.pktool.locale.*;
