@@ -1,0 +1,31 @@
+pktool.menu.edit: 編輯
+pktool.menu.preferences: 偏好設定
+pktool.menu.help: 幫助
+pktool.menu.devs: 開發
+pktool.menu.clear: 清除
+pktool.menu.quit: 退出
+pktool.menu.lang: 語言
+pktool.menu.sss: Super Secret Settings
+pktool.menu.about: 關於
+pktool.menu.tutorial: 線上說明書
+pktool.menu.swing: Swing 說明書
+pktool.about.author: 建國中學 11101 毛柏毅
+pktool.about.description: 為了自主學習計畫而做的一個小小的資料包產生器。\n作者\： %s\n版本\： %s
+pktool.about.title: 關於
+pktool.main.title: 資料包產生器
+pktool.test.test: 安安
+pktool.changelang.title: 更換語言
+pktool.changelang.description: 你還有一些東西留著沒有存檔喔～（好啦我也不會弄存檔功能）\n你確定要更換語言嗎？
+pktool.clear.title: 清除
+pktool.clear.description: 你有一些東西還沒存檔喔～（當然我也不知道怎麼弄）\n你確定要清除所有已執行的更動嗎？
+pktool.generate.error.title: 無法生成資料包
+pktool.generate.error.description.no_packname: 您尚未輸入資料包名稱！
+pktool.generate.error.description.unknown: 出現未知的錯誤，以致於無法生成資料包！
+pktool.generate.error.description.packname_with_invalid_char: 資料包名稱不可包含下列字元：\n\\ / | ? " * \: < > .
+pktool.generate.success.title: 成功製作資料包
+pktool.generate.success.description: 已成功製作資料包"%s"
+pktool.bench.label.pack_name: 資料包名稱
+pktool.bench.label.pack_description: 資料包描述
+pktool.bench.config.do_use_json_description: 使用JSON文本製作描述
+pktool.bench.config.do_generate_minecraft: 生成minecraft命名空間
+pktool.bench.button.generate: 生成資料包
