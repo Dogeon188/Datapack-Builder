@@ -5,8 +5,7 @@ import java.awt.event.*;
 import java.lang.reflect.*;
 import java.util.*;
 import javax.swing.*;
-import me.dogeon.pktool.Main;
-import me.dogeon.pktool.ui.mbf.*; // short hand for "menubarFunction"
+import me.dogeon.pktool.ui.mbf.*;
 import me.dogeon.pktool.locale.*;
 
 public class MainMenuBar {
@@ -22,22 +21,20 @@ public class MainMenuBar {
     ArrayList<JComponent> components;
 
     int menuKM = Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
-    int shiftKM = InputEvent.SHIFT_DOWN_MASK;
 
     int menuL;
     int mitemL;
 
     public MainMenuBar(JFrame frame) {
         String n[] = {
-        "edit", "preferences", "help", "devs", // JMenu
+        "edit", "preferences", "help", // JMenu
         "clear", "sep", "quit", // Edit...
         "lang", "sss", // Preference...
-        "about", "sep", "tutorial", // Help...
-        "swing" // Devs...
+        "about", "sep", "tutorial" // Help...
         };
         name = n;
-        menuL = 4;
-        mitemL = 9;
+        menuL = 3;
+        mitemL = 8;
 
         KeyStroke k[] = {
             KeyStroke.getKeyStroke(KeyEvent.VK_W, menuKM), // edit > clear
@@ -47,8 +44,7 @@ public class MainMenuBar {
             null, // prf > sss
             null, // help > about
             null, // sep
-            KeyStroke.getKeyStroke(KeyEvent.VK_T, shiftKM), // help > online tutorial
-            KeyStroke.getKeyStroke(KeyEvent.VK_S, shiftKM) // devs > javax.swing
+            KeyStroke.getKeyStroke(KeyEvent.VK_T, menuKM), // help > online tutorial
         };
         key = k;
 

@@ -6,7 +6,7 @@ import me.dogeon.pktool.locale.*;
 
 public class MBFAbout {
 
-  static String version = "0.2.0";
+  static String version = "0.1.0";
   static String prefix = "pktool.about.";
 
   public static void run() {

@@ -1,0 +1,30 @@
+pktool.menu.edit: 編集
+pktool.menu.preferences: 環境設定
+pktool.menu.help: ヘルプ
+pktool.menu.clear: データをクリア
+pktool.menu.quit: 終了する
+pktool.menu.lang: 言語設定
+pktool.menu.sss: Super Secret Settings
+pktool.menu.about: 情報
+pktool.menu.tutorial: オンラインマニュアル
+pktool.about.author: Dogeon
+pktool.about.description: 自由研究のために作りした、ちっさいなデータパック発生器です。\n作者： %s\nバージョン： %s
+pktool.about.title: 情報
+pktool.main.title: データパック発生器
+pktool.test.test: おすっ
+pktool.changelang.title: 言語を変更します
+pktool.changelang.description: 言語を変更ならば、今がいるデータは消し去ってる。\n本当に言語を変更するか。
+pktool.clear.title: データをクリア
+pktool.clear.description: このアクションは、今まで作りした変更を消し去っています。\n本当にこうでいきるのか。
+pktool.generate.error.title: データパックを生成しなかった
+pktool.generate.error.description.no_packname: データパックの名前はまだ入力しない！
+pktool.generate.error.description.unknown: 知らないエラーが発生しました。
+pktool.generate.error.description.packname_with_invalid_char: パックの名前は、これからのキャラクターに含めることはできません：\n\\ / | ? " * \: < > .
+pktool.generate.success.title: データパックに作りました
+pktool.generate.success.description: でーたぱっく”%s”に作りました
+pktool.bench.label.pack_name: デタパックの名
+pktool.bench.label.pack_description: データパックの説明
+pktool.bench.config.do_use_json_description:　JSONテクストに説明を作る
+pktool.bench.config.do_generate_minecraft:　”minecraft”の命名空間生成する
+pktool.bench.config.do_generate_function_tag: #tickと#loadの関数のタグを作る
+pktool.bench.button.generate: データパックを生成する

@@ -2,6 +2,7 @@ package me.dogeon.pktool.ui;
 
 import java.awt.*;
 import java.util.*;
+import javax.script.Compilable;
 import javax.swing.*;
 import me.dogeon.pktool.ui.MainMenuBar;
 import me.dogeon.pktool.locale.*;
@@ -12,7 +13,7 @@ public class MainFrame {
     private static JFrame window;
     static String prefix = "pktool.main.";
     static String frameTitle = prefix + "title";
-    static Dimension frameSize = new Dimension(800, 450);
+    static Dimension frameSize = new Dimension(400, 450);
     static Image icon = new ImageIcon("img/icon.gif").getImage();
     static Color fontColor = new Color(100,100,100);
 
