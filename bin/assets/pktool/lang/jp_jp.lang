@@ -24,7 +24,7 @@ pktool.generate.success.title: データパックに作りました
 pktool.generate.success.description: でーたぱっく”%s”に作りました
 pktool.bench.label.pack_name: デタパックの名
 pktool.bench.label.pack_description: データパックの説明
-pktool.bench.config.do_use_json_description:　JSONテクストに説明を作る
+pktool.bench.config.do_use_json_description:　JSONテキストに説明を作る
 pktool.bench.config.do_generate_minecraft:　”minecraft”の命名空間生成する
 pktool.bench.config.do_generate_function_tag: #tickと#loadの関数のタグを作る
 pktool.bench.button.generate: データパックを生成する
