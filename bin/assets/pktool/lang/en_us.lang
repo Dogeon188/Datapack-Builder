@@ -1,23 +1,21 @@
 pktool.menu.edit: Edit
 pktool.menu.preferences: Preferences
 pktool.menu.help: Help
-pktool.menu.devs: Devs
 pktool.menu.clear: Clear
 pktool.menu.quit: Quit
 pktool.menu.lang: Languages
 pktool.menu.sss: Super Secret Settings
 pktool.menu.about: About
-pktool.menu.tutorial: Online Tutorial
-pktool.menu.swing: Swing Docs
+pktool.menu.tutorial: Online Manual
 pktool.about.author: Eric "Dogeon" Mao
 pktool.about.description: A simple datapack maker for my self-studying project.\nAuthor\: %s\nVersion\: %s
 pktool.about.title: About
 pktool.main.title: Datapack Maker
 pktool.test.test: Hello World!
 pktool.changelang.title: Changing Language!
-pktool.changelang.description: You have something in this app that is unsaved! (I mean my skill is not good enough to do that)\nDo you really want to change you language?
-pktool.clear.title: Clearing content!
-pktool.clear.description: You have something in this app that is still unsaved! (And I don't know how to do that either)\nDo you really want to clear all your changes?
+pktool.changelang.description: The current data will be cleared! (I mean my skill is not good enough to save that)\nDo you really want to change your language?
+pktool.clear.title: Clearing data!
+pktool.clear.description: This will remove all your unsaved data! (And I don't know how to save that either)\nDo you really want to remove all your changes?
 pktool.generate.error.title: Unable to generate datapack
 pktool.generate.error.description.no_packname: You haven't inserted the datapack's name!
 pktool.generate.error.description.unknown: An unknown error has occured, so I can't help you build a datapack \:(
@@ -28,4 +26,5 @@ pktool.bench.label.pack_name: Datapack Name
 pktool.bench.label.pack_description: Description
 pktool.bench.config.do_use_json_description: Using JSON component
 pktool.bench.config.do_generate_minecraft: Generate "minecraft" namespace
+pktool.bench.config.do_generate_function_tag: Generate #tick and #load function tag
 pktool.bench.button.generate: Generate Datapack

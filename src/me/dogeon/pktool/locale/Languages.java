@@ -8,15 +8,17 @@ public class Languages {
 
   public static final Language EN_US;
   public static final Language ZH_TW;
+  public static final Language JP_JP;
   public static final Language EN_UD;
 
   static {
     EN_US = new Language("English (US)", "en_us");
     ZH_TW = new Language("繁體中文（台灣）", "zh_tw");
+    JP_JP = new Language("日本語（日本）", "jp_jp");
     EN_UD = new Language("ɥsᴉꞁᵷuƎ (SՈ)", "en_ud");
   }
 
-  private static String defaultLangId = Languages.ZH_TW.id;
+  private static String defaultLangId = Languages.EN_US.id;
   public static String currentLangId = defaultLangId;
 
   public static Dictionary getLangDict() {
