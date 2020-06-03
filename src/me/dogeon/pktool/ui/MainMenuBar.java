@@ -56,8 +56,7 @@ public class MainMenuBar {
             () -> {MBFSuperSecretSettings.run();}, // sss
             () -> {MBFAbout.run();},
             null, // sep
-            () -> {MBFOnlineTutorial.run();}, // tut
-            () -> {MBFSwingDoc.run();}
+            () -> {MBFOnlineTutorial.run();} // tut
         };
         methods = m;
         
