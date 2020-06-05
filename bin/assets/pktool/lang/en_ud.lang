@@ -1,14 +1,12 @@
 pktool.menu.edit: ʇᴉpƎ
 pktool.menu.preferences: sǝɔuǝɹǝɟǝɹԀ
 pktool.menu.help: dlǝH
-pktool.menu.devs: sʌǝp
 pktool.menu.clear: ɹɐǝlƆ
 pktool.menu.quit: ʇᴉnQ
 pktool.menu.lang: sǝƃɐnƃuɐ˥
 pktool.menu.sss: sƃuᴉʇʇǝS ʇǝɹɔǝS ɹǝdnS
 pktool.menu.about: ʇnoq∀
-pktool.menu.tutorial: lɐᴉɹoʇn┴ ǝuᴉluO
-pktool.menu.swing: sɔop ƃuᴉʍS
+pktool.menu.tutorial: lɐnuɐW ǝuᴉluO
 pktool.about.author: oɐW ,,uoǝƃop,, ɔᴉɹƎ
 pktool.about.description: ˙ʇɔǝɾoɹd ƃuᴉʎpnʇs-ɟlǝs ʎɯ ɹoɟ ɹǝʞɐɯ ʞɔɐdɐʇɐp ǝldɯᴉs ∀\n%s \:ɹoɥʇn∀\n%s \:uoᴉsɹǝΛ
 pktool.about.title: ʇnoq∀
@@ -28,4 +26,5 @@ pktool.bench.label.pack_name: ǝɯɐN ʞɔɐdɐʇɐp
 pktool.bench.label.pack_description: uoᴉʇdᴉɹɔsǝp
 pktool.bench.config.do_use_json_description: ʇuǝuodɯoɔ NOSſ ƃuᴉs∩
 pktool.bench.config.do_generate_minecraft: ǝɔɐdsǝɯɐu ,,ʇɟɐɹɔǝuᴉɯ,, ǝʇɐɹǝuǝפ
+pktool.bench.config.do_generate_function_tag: ƃɐʇ uoᴉʇɔunɟ pɐol# puɐ ʞɔᴉʇ# ǝʇɐɹǝuǝפ
 pktool.bench.button.generate: ʞɔɐdɐʇɐp ǝʇɐɹǝuǝפ

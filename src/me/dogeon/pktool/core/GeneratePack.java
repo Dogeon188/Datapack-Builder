@@ -57,6 +57,19 @@ public class GeneratePack {
       fw.close();
       new File(packroot + "/data").mkdirs();
 
+      if (Configurations.generateMinecraftNamespace) {
+        new File(packroot + "/data/minecraft/").mkdirs();
+        if (Configurations.generateFunctionTags) {
+          new File(packroot + "/data/minecraft/tags/functions/").mkdirs();
+          String[] strings1 = {"tick", "load"};
+          for (String string1 : strings1) {
+            FileWriter fw1 = new FileWriter(packroot + String.format("/data/minecraft/tags/functions/%s.json", string1));
+            fw1.write("{\n\t\"values\": [\n\t]\n}");
+            fw1.close();
+          }
+        }
+      }
+
       showSuccess(packname);
     } catch (Exception e) {
       showWarn("unknown");

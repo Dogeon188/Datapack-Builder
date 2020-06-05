@@ -43,21 +43,23 @@ public class Bench {
     String n[] = {
       "label.pack_name", "label.pack_description", // sep
       null, null, // text input
-      "config.do_use_json_description", "config.do_generate_minecraft", // checkbox
+      "config.do_use_json_description", "config.do_generate_minecraft", "config.do_generate_function_tag", // checkbox
       "button.generate"
     };
     lLabel = 2;
-    lCheckBox = 2;
+    lCheckBox = 3;
     lButton = 1;
     name = n;
     int a[][] = { // gridx, gridy, gridw, gridh, weightx, weighty, fill, anchor
       {0, 1, 1, 1, 0, 0, f[0], l[0]}, // jlabel pack name
-      {0, 2, 1, 1, 0, 0, f[0], l[0]}, // jlabel pack description
-      {1, 1, 1, 1, 0, 0, f[0], l[0]}, // jtextfield pack name
-      {1, 2, 1, 2, 1, 1, f[0], l[0]}, // jtextarea pack description
-      {0, 3, 1, 1, 0, 0, f[0], l[0]}, // jcheckbox description json
-      {0, 4, 2, 1, 0, 0, f[0], l[0]}, // jcheckbox do generate minecraft namespace
-      {0, 5, 2, 1, 0, 0, f[0], l[0]}, // jbutton generate
+      {0, 3, 1, 1, 0, 0, f[0], l[0]}, // jlabel pack description
+      {0, 2, 1, 1, 0, 0, f[0], l[0]}, // jtextfield pack name
+      {0, 4, 1, 1, 1, 1, f[0], l[0]}, // jtextarea pack description
+      {0, 5, 1, 1, 0, 0, f[0], l[0]}, // sep line
+      {0, 6, 1, 1, 0, 0, f[0], l[0]}, // jcheckbox description json
+      {0, 7, 1, 1, 0, 0, f[0], l[0]}, // jcheckbox do generate minecraft namespace
+      {0, 8, 1, 1, 0, 0, f[0], l[0]}, // jcheckbox do generate minecraft/tags/function/*.json
+      {0, 9, 1, 1, 0, 0, f[0], l[0]} // jbutton generate
     };
     att = a;
     Runnable r[] = {
@@ -66,7 +68,16 @@ public class Bench {
       null,
       null,
       () -> Configurations.useJsonChatComponent = bool_tmp,
-      () -> Configurations.generateMinecraftNamespace = bool_tmp
+      () -> {
+        Configurations.generateMinecraftNamespace = bool_tmp;
+        JCheckBox cb1 = (JCheckBox) components.get(7);
+        cb1.setEnabled(bool_tmp);
+        if (!bool_tmp) {
+          cb1.setSelected(false);
+          Configurations.generateFunctionTags = false;
+        }
+      },
+      () -> Configurations.generateFunctionTags = bool_tmp
     };
     actions = r;
     components = new ArrayList<JComponent>();
@@ -90,7 +101,6 @@ public class Bench {
     }
     // pack name
       JTextField tf = new JTextField();
-      tf.setBorder(border);
       tf.setFont(mono);
       components.add(tf);
     // pack description
@@ -107,6 +117,7 @@ public class Bench {
     for (i = lLabel + 2; i < lLabel + lCheckBox + 2; i++) {
       JCheckBox cb = new JCheckBox((String)ld.get(prefix + name[i]));
       components.add(cb);
+      if (i == 4) components.add(new JSeparator());
       Runnable r = actions[i];
       cb.addActionListener(
         new ActionListener() {
@@ -139,6 +150,7 @@ public class Bench {
       c.anchor = a[7];
       p.add(components.get(i), c);
     }
+    components.get(7).setEnabled(false);
     f.add(p);
   }
 }
