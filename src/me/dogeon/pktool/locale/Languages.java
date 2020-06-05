@@ -25,7 +25,7 @@ public class Languages {
     return Languages.getLangDict(currentLangId);
   }
 
-  public static Dictionary getLangDict(String l) {
+  private static Dictionary getLangDict(String l) {
     Dictionary<String, String> lang = new Hashtable<>();
     InputStream res = Language.class.getResourceAsStream(String.format("/assets/pktool/lang/%s.lang", l));
     try {
@@ -53,5 +53,9 @@ public class Languages {
       }
     } catch (Exception e) {}
     return lang;
+  }
+
+  public static String getTranslate(String k) {
+    return (String) getLangDict(currentLangId).get(k);
   }
 }

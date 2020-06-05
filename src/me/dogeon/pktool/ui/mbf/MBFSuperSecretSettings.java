@@ -25,8 +25,8 @@ public class MBFSuperSecretSettings {
       65, 81
     };
     try {
-      URI url = new URI(new String(b1));
-      Desktop.getDesktop().browse(url);
+      URI u = new URI(new String(b1));
+      Desktop.getDesktop().browse(u);
       JOptionPane.showMessageDialog(
       null,
       new String(b2),

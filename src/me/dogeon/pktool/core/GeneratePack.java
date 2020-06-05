@@ -8,22 +8,22 @@ import me.dogeon.pktool.locale.*;
 
 public class GeneratePack {
 
-  static String prefix = "pktool.generate.";
+  static String pre = "pktool.generate.";
 
   public static void generate(JFrame f) {
     JPanel bench = (JPanel)f.getContentPane().getComponent(0);
     Component[] cs = bench.getComponents();
-    String packname = null;
-    String packdesc = null;
+    String pkn = null;
+    String pkd = null;
 
     for (Component c : cs) {
       if (c.getClass() == JTextField.class) {
         JTextField t = (JTextField) c;
-        packname = t.getText();
-        if (packname.equals("")) {
+        pkn = t.getText();
+        if (pkn.equals("")) {
           showWarn("no_packname");
           return;
-        } else if (packname.matches(".*[\\/|?\"*:<>.].*")) {
+        } else if (pkn.matches(".*[\\/|?\"*:<>.].*")) {
           showWarn("packname_with_invalid_char");
           return;
         }
@@ -31,46 +31,44 @@ public class GeneratePack {
         JScrollPane s = (JScrollPane) c;
         JViewport v = (JViewport) s.getComponent(0);
         JTextArea t = (JTextArea) v.getComponent(0);
-        packdesc = t.getText();
-        if (!Configurations.useJsonChatComponent) {
-          packdesc = packdesc.replace("\"", "\\\"");
-          packdesc = "\"" + packdesc + "\"";
+        pkd = t.getText();
+        if (!Configurations.jsonDesc) {
+          pkd = pkd.replace("\"", "\\\"");
+          pkd = "\"" + pkd + "\"";
         }
       }
     }
 
     try {
-      String packroot = "datapacks/" + packname;
+      String root = "datapacks/" + pkn;
       JFileChooser jfc = new JFileChooser(System.getProperty("user.dir"));
       jfc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-      jfc.setDialogTitle("Save datapack to...");
+      jfc.setDialogTitle(Languages.getTranslate(pre + "file.title"));
       int res1 = jfc.showSaveDialog(null);
       if (res1 == JFileChooser.CANCEL_OPTION) {
         return;
       }
       File file1 = jfc.getSelectedFile();
-      packroot = file1.getAbsolutePath() + "/" + packname;
+      root = file1.getAbsolutePath() + "/" + pkn;
 
-      new File(packroot).mkdirs();
-      FileWriter fw = new FileWriter(packroot + "/pack.mcmeta");
-      fw.write(String.format("{\n\t\"pack\":{\n\t\t\"pack_format\": 5,\n\t\t\"description\": %s\n\t}\n}", packdesc));
+      new File(root).mkdirs();
+      FileWriter fw = new FileWriter(root + "/pack.mcmeta");
+      fw.write(String.format("{\n\t\"pack\":{\n\t\t\"pack_format\": 5,\n\t\t\"description\": %s\n\t}\n}", pkd));
       fw.close();
-      new File(packroot + "/data").mkdirs();
-
-      if (Configurations.generateMinecraftNamespace) {
-        new File(packroot + "/data/minecraft/").mkdirs();
-        if (Configurations.generateFunctionTags) {
-          new File(packroot + "/data/minecraft/tags/functions/").mkdirs();
-          String[] strings1 = {"tick", "load"};
-          for (String string1 : strings1) {
-            FileWriter fw1 = new FileWriter(packroot + String.format("/data/minecraft/tags/functions/%s.json", string1));
+      new File(root + "/data").mkdirs();
+      if (Configurations.mcNamespace) {
+        new File(root + "/data/minecraft/").mkdirs();
+        if (Configurations.tickLoadTags) {
+          new File(root + "/data/minecraft/tags/functions/").mkdirs();
+          String[] strs1 = {"tick", "load"};
+          for (String str1 : strs1) {
+            FileWriter fw1 = new FileWriter(root + String.format("/data/minecraft/tags/functions/%s.json", str1));
             fw1.write("{\n\t\"values\": [\n\t]\n}");
             fw1.close();
           }
         }
       }
-
-      showSuccess(packname);
+      showSuccess(pkn);
     } catch (Exception e) {
       showWarn("unknown");
       e.printStackTrace();
@@ -78,25 +76,25 @@ public class GeneratePack {
   }
 
   private static void showWarn(String e) {
-    Dictionary ld = Languages.getLangDict();
     JOptionPane.showMessageDialog(
       null,
-      (String)ld.get(prefix + "error.description." + e),
-      (String)ld.get(prefix + "error.title"),
-      JOptionPane.WARNING_MESSAGE
-      );
+      Languages.getTranslate(pre + "error.description." + e),
+      Languages.getTranslate(pre + "error.title"),
+      JOptionPane.WARNING_MESSAGE,
+      new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("assets/pktool/textures/warn.png"))
+    );
   }
 
   private static void showSuccess(String pn) {
-    Dictionary ld = Languages.getLangDict();
     JOptionPane.showMessageDialog(
       null,
       String.format(
-        (String)ld.get(prefix + "success.description"),
+        Languages.getTranslate(pre + "success.description"),
         pn
-        ),
-      (String)ld.get(prefix + "success.title"),
-      JOptionPane.INFORMATION_MESSAGE
-      );
+      ),
+      Languages.getTranslate(pre + "success.title"),
+      JOptionPane.INFORMATION_MESSAGE,
+      new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("assets/pktool/textures/saved.png"))
+    );
   }
 }
