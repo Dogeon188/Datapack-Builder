@@ -7,16 +7,14 @@ import me.dogeon.pktool.Main;
 
 public class MBFClear {
 
-  static String prefix = "pktool.clear.";
-
   public static void run(JFrame f) {
-    Dictionary ld = Languages.getLangDict();
     int r = JOptionPane.showConfirmDialog(
       f,
-      (String)ld.get(prefix + "description"),
-      (String)ld.get(prefix + "title"),
+      Languages.getTranslate("pktool.clear.description"),
+      Languages.getTranslate("pktool.clear.title"),
       JOptionPane.YES_NO_OPTION,
-      JOptionPane.WARNING_MESSAGE
+      JOptionPane.WARNING_MESSAGE,
+      new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("assets/pktool/textures/warn.png"))
       );
     if (r == JOptionPane.YES_OPTION) {
       f.dispose();

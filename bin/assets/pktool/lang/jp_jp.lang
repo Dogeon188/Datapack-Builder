@@ -16,6 +16,7 @@ pktool.changelang.title: 言語を変更します
 pktool.changelang.description: 言語を変更ならば、今がいるデータは消し去ってる。\n本当に言語を変更するか。
 pktool.clear.title: データをクリア
 pktool.clear.description: このアクションは、今まで作りした変更を消し去っています。\n本当にこうでいきるのか。
+pktool.generate.file.title: どこにデータパックを生成するか。
 pktool.generate.error.title: データパックを生成しなかった
 pktool.generate.error.description.no_packname: データパックの名前はまだ入力しない！
 pktool.generate.error.description.unknown: 知らないエラーが発生しました。

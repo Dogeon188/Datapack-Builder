@@ -10,13 +10,13 @@ public class MBFLang {
   static String prefix = "pktool.changelang.";
 
   public static void changeLang(JFrame f, String l) {
-    Dictionary ld = Languages.getLangDict();
     int r = JOptionPane.showConfirmDialog(
       f,
-      (String)ld.get(prefix + "description"),
-      (String)ld.get(prefix + "title"),
+      Languages.getTranslate(prefix + "description"),
+      Languages.getTranslate(prefix + "title"),
       JOptionPane.YES_NO_OPTION,
-      JOptionPane.WARNING_MESSAGE
+      JOptionPane.WARNING_MESSAGE,
+      new ImageIcon(Thread.currentThread().getContextClassLoader().getResource("assets/pktool/textures/warn.png"))
       );
     if (r == JOptionPane.YES_OPTION) {
       Languages.currentLangId = l;
