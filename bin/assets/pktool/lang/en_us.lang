@@ -16,6 +16,7 @@ pktool.changelang.title: Changing Language!
 pktool.changelang.description: The current data will be cleared! (I mean my skill is not good enough to save that)\nDo you really want to change your language?
 pktool.clear.title: Clearing data!
 pktool.clear.description: This will remove all your unsaved data! (And I don't know how to save that either)\nDo you really want to remove all your changes?
+pktool.generate.file.title: Save datapack to...
 pktool.generate.error.title: Unable to generate datapack
 pktool.generate.error.description.no_packname: You haven't inserted the datapack's name!
 pktool.generate.error.description.unknown: An unknown error has occured, so I can't help you build a datapack \:(

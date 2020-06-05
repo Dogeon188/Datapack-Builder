@@ -16,6 +16,7 @@ pktool.changelang.title: 更換語言
 pktool.changelang.description: 切換語言的話，還沒輸出的東西會直接不見喔~（好啦我也不會弄存檔功能）\n你確定要更換語言嗎？
 pktool.clear.title: 清除
 pktool.clear.description: 這樣會清除所有的更動喔\n你確定要清除所有已執行的更動嗎？
+pktool.generate.file.title: 儲存資料包至……
 pktool.generate.error.title: 無法生成資料包
 pktool.generate.error.description.no_packname: 您尚未輸入資料包名稱！
 pktool.generate.error.description.unknown: 出現未知的錯誤，以致於無法生成資料包！
