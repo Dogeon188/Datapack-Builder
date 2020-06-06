@@ -7,7 +7,7 @@ pktool.menu.lang: Languages
 pktool.menu.sss: Super Secret Settings
 pktool.menu.about: About
 pktool.menu.tutorial: Online Manual
-pktool.about.author: Eric "Dogeon" Mao
+pktool.about.author: Dogeon188
 pktool.about.description: A simple datapack maker for my self-studying project.\nAuthor\: %s\nVersion\: %s
 pktool.about.title: About
 pktool.main.title: Datapack Maker

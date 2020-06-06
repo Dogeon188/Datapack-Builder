@@ -7,7 +7,7 @@ pktool.menu.lang: 言語設定
 pktool.menu.sss: Super Secret Settings
 pktool.menu.about: 情報
 pktool.menu.tutorial: オンラインマニュアル
-pktool.about.author: Dogeon
+pktool.about.author: Dogeon188
 pktool.about.description: 自由研究のために作りした、ちっさいなデータパック発生器です。\n作者： %s\nバージョン： %s
 pktool.about.title: 情報
 pktool.main.title: データパック発生器

@@ -7,7 +7,7 @@ pktool.menu.lang: 語言
 pktool.menu.sss: Super Secret Settings
 pktool.menu.about: 關於
 pktool.menu.tutorial: 線上說明書
-pktool.about.author: 建國中學 11101 毛柏毅
+pktool.about.author: Dogeon188
 pktool.about.description: 為了自主學習計畫而做的一個小小的資料包產生器。\n作者\： %s\n版本\： %s
 pktool.about.title: 關於
 pktool.main.title: 資料包產生器
